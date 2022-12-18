@@ -1,0 +1,5 @@
+{
+	"icon": "mime/image-png",
+	"hideShortcutEmblem": true,
+	"action": "imgviewer"
+}

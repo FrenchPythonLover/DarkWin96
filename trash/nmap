@@ -1,0 +1,7 @@
+//!wrt
+
+const newArgs=[...env.args];
+newArgs.slice(0,1)
+alert(newArgs)
+const msg=newArgs.join(" ")
+alert(`Running ${msg}`)

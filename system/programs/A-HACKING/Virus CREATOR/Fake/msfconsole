@@ -1,0 +1,44 @@
+//!wrt $BSPEC:{"ssy":"cli"}
+
+//
+let file ="";
+let ip = 0;
+const os ="Win96/DarkWin"
+/////////////////
+const term = this.boxedEnv.term;
+class CLIApplication extends WApplication {
+    /**
+     * Application constructor.
+     */
+    constructor() {
+        super()
+    }
+    
+    /**
+     * Main entry point.
+     * @param {String[]} argv The program arguments.
+     */
+    async main(argv) {
+        super.main(argv);
+        
+        // Write some text in the terminal.
+        term.writeln("Starting the Metasploit Framework.......");
+        term.writeln("Welcome to the Payload-creator.")
+        ip = await term.prompt("listener ip: ")
+        term.writeln(`Setting up listener :${ip}`);
+        term.writeln("Done");
+        let code=[];
+        code=['w96.FS.unmount(C:/);'];
+        file = await term.prompt("path+File name+extension: ");
+        term.writeln(`LOG: saving ${file}`);
+        w96.FS.writestr(file, code);
+        term.write("Done !")
+        /*
+
+        */           
+        // Pause the program.
+        await term.pause()
+    }
+}
+
+return await WApplication.execAsync(new CLIApplication(), this.boxedEnv.args, this);

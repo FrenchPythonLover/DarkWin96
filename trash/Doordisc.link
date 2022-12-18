@@ -1,0 +1,5 @@
+{
+	"icon": "apps/discord",
+	"hideShortcutEmblem": true,
+	"action": "openurl https://discord.gg/KCTaM75"
+}
